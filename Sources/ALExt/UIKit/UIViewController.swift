@@ -14,7 +14,7 @@
 
 import UIKit
 
-@available(iOS 9.3, *)
+@available(iOS 10.0, *)
 
 public extension UIViewController {
 	
