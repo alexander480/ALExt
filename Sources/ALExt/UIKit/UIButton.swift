@@ -15,6 +15,8 @@
 import UIKit
 
 public extension UIButton {
+    
+    /*
 	@IBInspectable var cornerRadius: CGFloat = 0 { didSet { layer.cornerRadius = cornerRadius  } }
     @IBInspectable var shadowColor: CGColor = UIColor.black.cgColor { didSet { layer.shadowColor = shadowColor } }
     @IBInspectable var shadowOpacity: Float = 1.0 { didSet { layer.shadowOpacity = shadowOpacity } }
@@ -25,7 +27,8 @@ public extension UIButton {
         get { if let color = layer.borderColor { return UIColor(cgColor: color) }; return nil }
         set { if let color = newValue { layer.borderColor = color.cgColor } else { layer.borderColor = nil } }
     }
-	
+	*/
+    
 	func setImageForAllStates(image: UIImage) {
 		self.setImage(image, for: .normal)
 		self.setImage(image, for: .selected)
@@ -54,6 +57,7 @@ public extension UIButton {
 		self.setAttributedTitle(title, for: .disabled)
 	}
 	
+    @available(iOS 13.0, *)
     func setSFSymbol(iconName: String, size: CGFloat, weight: UIImage.SymbolWeight, scale: UIImage.SymbolScale, tintColor: UIColor, backgroundColor: UIColor) {
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: size, weight: weight, scale: scale)
         let buttonImage = UIImage(systemName: iconName, withConfiguration: symbolConfiguration)

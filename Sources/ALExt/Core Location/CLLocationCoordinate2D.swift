@@ -17,6 +17,7 @@ import CoreLocation
 import MapKit
 
 @available(OSX 10.12, *)
+@available(iOS 10.0, *)
 
 public extension CLLocationCoordinate2D {
     func toPlacemark() -> MKPlacemark { return MKPlacemark(coordinate: self) }

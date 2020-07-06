@@ -14,6 +14,8 @@
 
 import UIKit
 
+@available(iOS 9.3, *)
+
 public extension UIViewController {
 	
 	// MARK: Present UIAlertViewController

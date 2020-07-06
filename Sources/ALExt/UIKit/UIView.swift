@@ -14,10 +14,13 @@
 
 import UIKit
 
+@available(iOS 9.0, *)
+
 public extension UIView {
     
     // MARK: Border
-	
+    
+	/*
     @IBInspectable var borderColor: UIColor? {
 		get { if let color = layer.borderColor { return UIColor(cgColor: color) } else { return nil } }
         set { layer.borderColor = newValue?.cgColor }
@@ -27,9 +30,11 @@ public extension UIView {
         get { return layer.borderWidth }
         set { layer.borderWidth = newValue }
     }
-    
+    */
+     
 	// MARK: Shadow
-	
+    
+	/*
 	@IBInspectable var shadowColor: UIColor? {
 		get { if let color = layer.shadowColor { return UIColor(cgColor: color) } else { return nil } }
 		set { layer.shadowColor = newValue?.cgColor ?? UIColor.black.cgColor }
@@ -49,9 +54,11 @@ public extension UIView {
 		set { layer.shadowRadius = newValue }
 		get { return layer.shadowRadius }
 	}
+    */
 	
 	// MARK: Frame
 	
+    /*
 	@IBInspectable var padding: CGFloat {
 		set { self.layer.frame.inset(by: UIEdgeInsets(top: newValue, left: newValue, bottom: newValue, right: newValue)) }
 		get { return CGFloat(self.layer.frame.minX - self.layer.frame.maxX) }
@@ -66,7 +73,9 @@ public extension UIView {
 		set { self.layer.cornerRadius = (self.frame.size.width / 2); self.clipsToBounds = true }
 		get { if self.layer.cornerRadius == (self.frame.size.width / 2) { return true } else { return false } }
 	}
-	
+    */
+ 
+ 
 	// MARK: Animation
 	
 	func animateTo(frame: CGRect, withDuration duration: TimeInterval, completion: ((Bool) -> Void)? = nil) {

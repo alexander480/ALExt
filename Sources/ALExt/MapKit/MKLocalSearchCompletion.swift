@@ -16,6 +16,7 @@ import Foundation
 import MapKit
 
 @available(OSX 10.11.4, *)
+@available(iOS 9.3, *)
 
 public extension MKLocalSearchCompletion {
 	func toCoordinates(completion: @escaping (CLLocationCoordinate2D?) -> ()) {
