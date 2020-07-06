@@ -17,65 +17,6 @@ import UIKit
 @available(iOS 9.0, *)
 
 public extension UIView {
-    
-    // MARK: Border
-    
-	/*
-    @IBInspectable var borderColor: UIColor? {
-		get { if let color = layer.borderColor { return UIColor(cgColor: color) } else { return nil } }
-        set { layer.borderColor = newValue?.cgColor }
-    }
-
-    @IBInspectable var borderWidth: CGFloat {
-        get { return layer.borderWidth }
-        set { layer.borderWidth = newValue }
-    }
-    */
-     
-	// MARK: Shadow
-    
-	/*
-	@IBInspectable var shadowColor: UIColor? {
-		get { if let color = layer.shadowColor { return UIColor(cgColor: color) } else { return nil } }
-		set { layer.shadowColor = newValue?.cgColor ?? UIColor.black.cgColor }
-    }
-    
-    @IBInspectable var shadowOpacity: Float {
-        set { layer.shadowOpacity = newValue }
-        get { return layer.shadowOpacity }
-    }
-
-    @IBInspectable var shadowOffset: CGPoint {
-		set { layer.shadowOffset = CGSize(width: newValue.x, height: newValue.y) }
-		get { return CGPoint(x: layer.shadowOffset.width, y:layer.shadowOffset.height) }
-	}
-    
-    @IBInspectable var shadowRadius: CGFloat {
-		set { layer.shadowRadius = newValue }
-		get { return layer.shadowRadius }
-	}
-    */
-	
-	// MARK: Frame
-	
-    /*
-	@IBInspectable var padding: CGFloat {
-		set { self.layer.frame.inset(by: UIEdgeInsets(top: newValue, left: newValue, bottom: newValue, right: newValue)) }
-		get { return CGFloat(self.layer.frame.minX - self.layer.frame.maxX) }
-	}
-
-	@IBInspectable var cornerRadius: CGFloat {
-        get { return layer.cornerRadius }
-		set { layer.cornerRadius = newValue; layer.masksToBounds = newValue > 0 }
-    }
-	
-	@IBInspectable var circular: Bool {
-		set { self.layer.cornerRadius = (self.frame.size.width / 2); self.clipsToBounds = true }
-		get { if self.layer.cornerRadius == (self.frame.size.width / 2) { return true } else { return false } }
-	}
-    */
- 
- 
 	// MARK: Animation
 	
 	func animateTo(frame: CGRect, withDuration duration: TimeInterval, completion: ((Bool) -> Void)? = nil) {
