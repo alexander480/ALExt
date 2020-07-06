@@ -10,7 +10,9 @@
 // Created by Alexander Lester on 4/30/20.
 //
 
-import Foundation
+#if canImport(UIKit)
+
+import UIKit
 
 public extension NSMutableAttributedString {
 	func add(Image: UIImage, WithOffset: CGFloat?) {
@@ -33,3 +35,5 @@ public extension NSMutableAttributedString {
         return ceil(boundingBox.height)
     }
 }
+
+#endif

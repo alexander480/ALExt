@@ -10,6 +10,8 @@
 // Created by Alexander Lester on 4/30/20.
 //
 
+#if canImport(CoreLocation)
+
 import Foundation
 import CoreLocation
 
@@ -21,3 +23,5 @@ public extension CLLocation {
 		else { return false }
 	}
 }
+
+#endif

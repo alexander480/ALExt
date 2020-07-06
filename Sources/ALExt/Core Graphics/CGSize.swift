@@ -10,6 +10,8 @@
 // Created by Alexander Lester on 7/5/20.
 //
 
+#if canImport(CoreGraphics)
+
 import CoreGraphics
 
 public extension CGSize {
@@ -23,3 +25,5 @@ public extension CGSize {
 		return CGSize(width: newWidth, height: newHeight)
 	}
 }
+
+#endif

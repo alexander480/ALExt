@@ -10,6 +10,8 @@
 // Created by Alexander Lester on 4/30/20.
 //
 
+#if canImport(CoreLocation)
+
 import Foundation
 import CoreLocation
 
@@ -19,3 +21,5 @@ public extension CLLocationDistance {
 		if rounded { return miles.roundTo(2) } else { return miles }
 	}
 }
+
+#endif

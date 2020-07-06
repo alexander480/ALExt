@@ -10,6 +10,8 @@
 // Created by Alexander Lester on 4/30/20.
 //
 
+#if canImport(UIKit)
+
 import UIKit
 
 public extension UIColor {
@@ -44,3 +46,5 @@ public extension UIColor {
 		return UIColor(red: r * multiplier, green: g * multiplier, blue: b * multiplier, alpha: a)
 	}
 }
+
+#endif

@@ -10,10 +10,15 @@
 // Created by Alexander Lester on 7/5/20.
 //
 
+#if canImport(Photos)
+
 import Photos
+
+@available(OSX 10.13, *)
 
 public extension PHAsset {
 	func size() -> CGSize { return CGSize(width: self.pixelWidth, height: self.pixelHeight) }
-	func scaledSize(toFit width: CGFloat) -> CGSize { let oldSize = self.size(); return oldSize.scale(toFit: width) }
+	func scaledSize(toWidth: CGFloat) -> CGSize { let oldSize = self.size(); return oldSize.scale(toWidth: toWidth) }
 }
 
+#endif

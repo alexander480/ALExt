@@ -10,7 +10,8 @@
 // Created by Alexander Lester on 4/30/20.
 //
 
-import Foundation
+#if canImport(UIKit)
+
 import UIKit
 
 public extension UIView {
@@ -226,3 +227,5 @@ public extension UIView {
         return anchoredConstraints
     }
 }
+
+#endif

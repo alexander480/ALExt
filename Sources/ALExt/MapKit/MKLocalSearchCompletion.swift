@@ -10,8 +10,12 @@
 // Created by Alexander Lester on 4/30/20.
 //
 
+#if canImport(MapKit)
+
 import Foundation
 import MapKit
+
+@available(OSX 10.11.4, *)
 
 public extension MKLocalSearchCompletion {
 	func toCoordinates(completion: @escaping (CLLocationCoordinate2D?) -> ()) {
@@ -22,3 +26,5 @@ public extension MKLocalSearchCompletion {
 		}
 	}
 }
+
+#endif

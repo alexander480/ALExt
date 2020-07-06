@@ -10,6 +10,8 @@
 // Created by Alexander Lester on 4/30/20.
 //
 
+#if canImport(UIKit)
+
 import UIKit
 
 public extension UIImage {
@@ -125,3 +127,5 @@ public extension UIImage {
         }
     }
 }
+
+#endif
