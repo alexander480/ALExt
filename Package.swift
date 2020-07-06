@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "ALExt",
+    platforms: [.iOS(.v9)],
     products: [ .library(name: "ALExt", targets: ["ALExt"]) ],
     dependencies: [],
     targets: [ .target(name: "ALExt", dependencies: []) ]

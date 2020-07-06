@@ -17,7 +17,50 @@ import UIKit
 @available(iOS 9.0, *)
 
 public extension UIView {
-	// MARK: Animation
+    
+    func addBorder(color: UIColor = .black, width: CGFloat = 2.0) {
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = width
+    }
+    
+    func addShadow(color: UIColor = .black, opacity: CGFloat = 2.0, offset: CGSize = CGSize(width: 2, height: 2), radius: CGFloat = 0, path: CGPath?) {
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOpacity = Float(opacity)
+        self.layer.shadowOffset = offset
+        self.layer.shadowRadius = radius
+        
+        if let shadowPath = path { self.layer.shadowPath = shadowPath }
+    }
+    
+    func addPadding(top: CGFloat, left: CGFloat, bottom: CGFloat, right: CGFloat) {
+        self.layer.frame.inset(by: UIEdgeInsets(top: top, left: left, bottom: bottom, right: right))
+    }
+    
+    func setCornerRadius(_ radius: CGFloat) {
+        self.layer.cornerRadius = radius
+    }
+    
+    func toggleBlur(_ shouldBlur: Bool, style: UIBlurEffect.Style?) {
+        let blurViews = self.subviews.filter{ $0 is UIVisualEffectView }
+        
+        if shouldBlur {
+            let effect = UIBlurEffect(style: style ?? .dark)
+            let blurView = UIVisualEffectView(effect: effect)
+                blurView.frame = self.bounds
+                blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            self.addSubview(blurView)
+            self.sendSubviewToBack(blurView)
+        }
+        else {
+            for view in blurViews { view.removeFromSuperview() }
+        }
+    }
+    
+    func makeCircular() {
+        self.layer.cornerRadius = (self.frame.size.width / 2)
+        self.clipsToBounds = true
+    }
 	
 	func animateTo(frame: CGRect, withDuration duration: TimeInterval, completion: ((Bool) -> Void)? = nil) {
 	  guard let _ = superview else {
@@ -34,6 +77,43 @@ public extension UIView {
 		self.transform = self.transform.scaledBy(x: xScale, y: yScale)
 	  }, completion: completion)
 	}
+    
+    func centerPoint(ForSize: CGSize) -> CGPoint {
+        let xPoint = ((self.frame.size.width / 2) - (ForSize.width / 2))
+        let yPoint = ((self.frame.size.height / 2) - (ForSize.height / 2))
+        return CGPoint(x: xPoint, y: yPoint)
+    }
+
+    func displayToast(_ message: String, font: UIFont = UIFont().standard(), textColor: UIColor = UIColor.white, backgroundColor: UIColor = UIColor.black) {
+        
+        let toastLabel = UILabel()
+            toastLabel.textColor = textColor
+            toastLabel.font = font
+            toastLabel.textAlignment = .center
+            toastLabel.text = message
+            toastLabel.alpha = 0.0
+            toastLabel.layer.cornerRadius = 6
+            toastLabel.backgroundColor = backgroundColor
+
+            toastLabel.clipsToBounds  =  true
+
+        let toastWidth: CGFloat = toastLabel.intrinsicContentSize.width + 16
+        let toastHeight: CGFloat = 32
+        
+        toastLabel.frame = CGRect(x: self.frame.width / 2 - (toastWidth / 2),
+                                  y: self.frame.height - (toastHeight * 3),
+                                  width: toastWidth, height: toastHeight)
+        
+        self.addSubview(toastLabel)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .autoreverse, animations: {
+            toastLabel.alpha = 1.0
+        }) { _ in
+            toastLabel.removeFromSuperview()
+        }
+    }
+    
+    func removeGestureRecognizers() { if let recognizers = self.gestureRecognizers { for recognizer in recognizers { self.removeGestureRecognizer(recognizer) } } }
     
     // MARK: Extension To Create UIView Programmatically From .xib
     // See Article: https://medium.com/macoclock/swift-extensions-to-speed-up-your-ios-development-dccc00c72604

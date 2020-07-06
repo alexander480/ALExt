@@ -6,14 +6,12 @@
 //
 // ---------------------------------------
 //
-// AVPlayer.swift
+// UIButton.swift
 // Created by Alexander Lester on 7/5/20.
 //
 
-import AVFoundation
+import UIKit
 
-public extension AVPlayer {
-    var isPlaying: Bool {
-        return rate != 0 && error == nil
-    }
+public extension UIFont {
+    func standard() -> UIFont { return UIFont.systemFont(ofSize: UIFont.systemFontSize) }
 }

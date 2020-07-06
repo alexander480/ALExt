@@ -120,10 +120,11 @@ public extension UIImage {
 	
     func detectOrientationDegree () -> CGFloat {
         switch imageOrientation {
-        case .right, .rightMirrored:    return 90
-        case .left, .leftMirrored:      return -90
-        case .up, .upMirrored:          return 180
-        case .down, .downMirrored:      return 0
+            case .right, .rightMirrored:    return 90
+            case .left, .leftMirrored:      return -90
+            case .up, .upMirrored:          return 180
+            case .down, .downMirrored:      return 0
+            default: return 0
         }
     }
 }
