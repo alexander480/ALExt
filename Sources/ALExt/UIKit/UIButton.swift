@@ -79,6 +79,18 @@ public extension UIButton {
             right: 0.0
         )
     }
+    
+    func addBlur(style: UIBlurEffect.Style = .regular) {
+        let blur = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+            blur.frame = self.bounds
+            blur.isUserInteractionEnabled = false
+        
+        self.insertSubview(blur, at: 0)
+        
+        if let imageView = self.imageView {
+            self.bringSubview(toFront: imageView)
+        }
+    }
 }
 
 #endif
