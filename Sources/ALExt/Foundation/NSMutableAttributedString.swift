@@ -10,7 +10,7 @@
 // Created by Alexander Lester on 4/30/20.
 //
 
-#if canImport(UIKit)
+#if canImport(UIKit) && !os(watchOS)
 
 import UIKit
 
