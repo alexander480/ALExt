@@ -304,7 +304,7 @@ public extension UIView {
 
 // MARK: - Properties
 public extension UIView {
-
+	/*
     /// SwifterSwift: Border color of view; also inspectable from Storyboard.
     @IBInspectable var borderColor: UIColor? {
         get {
@@ -343,6 +343,8 @@ public extension UIView {
         }
     }
 
+	*/
+
     /// SwifterSwift: Height of view.
     var height: CGFloat {
         get {
@@ -372,6 +374,8 @@ public extension UIView {
         layer.render(in: context)
         return UIGraphicsGetImageFromCurrentImageContext()
     }
+
+	/*
 
     /// SwifterSwift: Shadow color of view; also inspectable from Storyboard.
     @IBInspectable var shadowColor: UIColor? {
@@ -413,6 +417,8 @@ public extension UIView {
             layer.shadowRadius = newValue
         }
     }
+
+	*/
 
     /// SwifterSwift: Size of view.
     var size: CGSize {
