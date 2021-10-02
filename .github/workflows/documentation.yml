@@ -1,3 +1,4 @@
+# .github/workflows/documentation.yml
 name: Documentation
 
 on: [push]
@@ -11,9 +12,8 @@ jobs:
       - name: Generate Documentation
         uses: SwiftDocOrg/swift-doc@master
         with:
-          inputs: "./Sources"
+          inputs: "Sources"
           module-name: ALExt
-          minimum-access-level: "internal"
           output: "Documentation"
       - name: Upload Documentation to Wiki
         uses: SwiftDocOrg/github-wiki-publish-action@v1
