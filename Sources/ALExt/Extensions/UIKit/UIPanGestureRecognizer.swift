@@ -10,6 +10,8 @@
 // Created by Alexander Lester on 7/5/20.
 //
 
+#if canImport(UIKit)
+
 import UIKit
 
 public enum PanDirection: Int {
@@ -39,3 +41,5 @@ public extension UIPanGestureRecognizer {
         }
     }
 }
+
+#endif

@@ -10,6 +10,8 @@
 // Created by Alexander Lester on 7/5/20.
 //
 
+#if canImport(UIKit) && canImport(CoreGraphics)
+
 import UIKit
 import CoreGraphics
 
@@ -31,3 +33,5 @@ public extension CALayer {
     }
   }
 }
+
+#endif

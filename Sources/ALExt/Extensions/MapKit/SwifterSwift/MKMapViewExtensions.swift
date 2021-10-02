@@ -6,11 +6,11 @@
 //  Copyright © 2019 SwifterSwift
 //
 
-#if canImport(MapKit)
+#if canImport(UIKit) && canImport(MapKit)
+
+import UIKit
 import MapKit
 
-#if !os(watchOS)
-@available(tvOS 9.2, *)
 public extension MKMapView {
 
     /// SwifterSwift: Dequeue reusable MKAnnotationView using class type
@@ -65,7 +65,5 @@ public extension MKMapView {
         }
     }
 }
-
-#endif
 
 #endif
