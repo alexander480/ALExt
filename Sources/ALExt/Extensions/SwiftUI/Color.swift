@@ -11,11 +11,15 @@
 import SwiftUI
 
 public extension Color {
-	convenience init(_ hexString: String) {
+	convenience init?(_ hexString: String) {
 		var hexStr = hexString
 		if hexString.first == "#" { hexStr.removeFirst() }
 		
-		let hexInt = Int(hexStr, radix: 16)!
+		guard let hexInt = Int(hexStr, radix: 16) else {
+			ALPrint("Failed To Convert Hex String Into Int.", .error);
+			
+			return nil
+		}
 		
 		self.init(hex: hexInt)
 	}
