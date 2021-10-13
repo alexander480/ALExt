@@ -11,7 +11,7 @@
 import SwiftUI
 
 public extension Color {
-	convenience init?(_ hexString: String) {
+	convenience init(_ hexString: String) {
 		var hexStr = hexString
 		if hexString.first == "#" { hexStr.removeFirst() }
 		
